@@ -13,11 +13,12 @@ import {
   useColorModeValue
 } from '@chakra-ui/react'
 import React from 'react'
-import { Col, Row, TextMini } from '..'
+import { Disclosure } from '@friendlyss/react-boost/types'
+import { Col, Row, TextMini } from '../..'
 import { useDisclosure } from '../../hooks'
 
 interface ModalProps {
-  name: keyof App.Disclosures
+  name: keyof Disclosure
   title?: string
   description?: string
   _modal?: Partial<ModalChakraProps>
@@ -37,15 +38,18 @@ const Modal: React.FC<ModalProps> = ({
   _body
 }) => {
   const { onClose, isOpen } = useDisclosure(name)
-  const [bg, color] = useColorModeValue(['white', 'black'], ['gray.900', 'white'])
+  const [bg, color] = useColorModeValue(
+    ['white', 'black'],
+    ['gray.900', 'white']
+  )
 
   return (
     <div>
       <ModalChakra isOpen={isOpen} onClose={onClose} {..._modal}>
         <ModalOverlay />
         <ModalContent
-          pos="relative"
-          rounded="sm"
+          pos='relative'
+          rounded='sm'
           bg={bg}
           color={color}
           {..._content}
@@ -58,7 +62,7 @@ const Modal: React.FC<ModalProps> = ({
           </Row>
           <ModalCloseButton zIndex={1000} />
           <ModalBody {..._body}>{children}</ModalBody>
-          {_footer && <ModalFooter {..._footer}></ModalFooter>}
+          {_footer && <ModalFooter {..._footer} />}
         </ModalContent>
       </ModalChakra>
     </div>

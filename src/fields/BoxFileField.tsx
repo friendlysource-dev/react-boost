@@ -1,18 +1,19 @@
 import React, { useState } from 'react'
-import { useFieldState } from '../../hooks/useFieldState'
-import BoxFile from '../BoxFile'
+import { useFieldState } from '../hooks'
+import { BoxFile } from '..'
 import { BoxProps } from '@chakra-ui/layout'
 
 interface RenderProps {
   files: FileList | undefined
 }
 
-export type BoxFileFieldProps = {
+// @ts-ignore
+export interface BoxFileFieldProps extends BoxProps {
   name: string
   isMultiple?: boolean
   render: (props: RenderProps) => React.ReactNode
   onChange?: (files: FileList) => void
-} & BoxProps
+}
 
 const BoxFileField: React.FC<BoxFileFieldProps> = ({
   name,
@@ -21,7 +22,7 @@ const BoxFileField: React.FC<BoxFileFieldProps> = ({
   render,
   ...rest
 }) => {
-  const [value, setValue, field] = useFieldState(name)
+  const [, setValue] = useFieldState(name)
   const [files, setFiles] = useState<FileList>()
 
   return (

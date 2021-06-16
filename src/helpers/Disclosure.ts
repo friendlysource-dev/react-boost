@@ -1,22 +1,22 @@
 import { TypedEmitter } from 'tiny-typed-emitter'
+import { Disclosure as DisclosureTypes } from '@friendlyss/react-boost/types'
+
+type DisclosureNames = keyof DisclosureTypes
 
 interface DisclosureEvents {
-  open: (name: App.Disclosures.Names, data: any) => void
-  close: (name: App.Disclosures.Names) => void
+  open: (name: DisclosureNames, data: any) => void
+  close: (name: DisclosureNames) => void
 }
 
 class Disclosure extends TypedEmitter<DisclosureEvents> {
-  public open<N extends App.Disclosures.Names>(
-    name: N,
-    data?: App.Disclosures[N]
-  ) {
+  public open<N extends DisclosureNames>(name: N, data?: DisclosureTypes[N]) {
     this.emit('open', name, {
       name,
-      ...data
+      ...(data || {})
     })
   }
 
-  public close(name: App.Disclosures.Names) {
+  public close(name: DisclosureNames) {
     this.emit('close', name)
   }
 }

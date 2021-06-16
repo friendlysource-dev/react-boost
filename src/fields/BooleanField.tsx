@@ -1,6 +1,6 @@
 import React from 'react'
-import { useFieldState } from '../hooks/useFieldState'
-import { SquareCheck, TextMini, Row } from '..'
+import { useFieldState } from '../hooks'
+import { Row, TextMini, SquareCheck } from '..'
 
 interface BooleanFieldProps {
   name: string
@@ -13,7 +13,7 @@ const BooleanField: React.FC<BooleanFieldProps> = ({
   label,
   defaultValue = false
 }) => {
-  const [value, setValue, field] = useFieldState(name, defaultValue)
+  const [value, setValue] = useFieldState(name, defaultValue)
 
   return (
     <Row

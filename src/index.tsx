@@ -1,6 +1,13 @@
 import * as React from 'react'
 import styles from './styles.module.css'
 
+export * as Helpers from './helpers'
+export * as Hooks from './hooks'
+export * as Icons from './icons'
+export * from './fields'
+
+export { FormProvider } from './providers/FormProvider'
+
 export { default as BoxColorMode } from './chakra-ui/BoxColorMode'
 export { default as BoxFile } from './chakra-ui/BoxFile'
 export { default as BoxMotion } from './chakra-ui/BoxMotion'
@@ -18,6 +25,7 @@ export { default as SlideDownGroupHover } from './chakra-ui/GroupHover/SlideDown
 export { default as SlideLeftGroupHover } from './chakra-ui/GroupHover/SlideLeftGroupHover'
 export { default as SlideRightGroupHover } from './chakra-ui/GroupHover/SlideRightGroupHover'
 export { default as SlideUpGroupHover } from './chakra-ui/GroupHover/SlideUpGroupHover'
+export { default as Modal } from './chakra-ui/Modal'
 
 interface Props {
   text: string

@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Disclosure } from '../helpers'
+import { Disclosure as DisclosureTypes } from '@friendlyss/react-boost/types'
 
-export function useDisclosure<N extends App.Disclosures.Names>(name: N) {
+type DisclosureNames = keyof DisclosureTypes
+
+export function useDisclosure<N extends DisclosureNames>(name: N) {
   const [isOpen, setOpen] = useState(false)
-  const [data, setData] = useState<Partial<App.Disclosures[N]>>({})
+  const [data, setData] = useState<Partial<DisclosureTypes[N]>>({})
 
   useEffect(() => {
     Disclosure.on('open', onOpenCallback as any)
@@ -15,7 +18,7 @@ export function useDisclosure<N extends App.Disclosures.Names>(name: N) {
     }
   }, [])
 
-  const onOpenCallback = (nameDispatch: N, data: App.Disclosures[N]) => {
+  const onOpenCallback = (nameDispatch: N, data: DisclosureTypes[N]) => {
     if (name === nameDispatch) {
       setOpen(true)
       // @ts-ignore
@@ -33,7 +36,7 @@ export function useDisclosure<N extends App.Disclosures.Names>(name: N) {
     Disclosure.close(name)
   }
 
-  const onOpen = (data: App.Disclosures[N]) => {
+  const onOpen = (data: DisclosureTypes[N]) => {
     Disclosure.open(name, data)
   }
 

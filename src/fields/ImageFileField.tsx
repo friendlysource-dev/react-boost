@@ -1,12 +1,13 @@
+/* eslint-disable multiline-ternary */
 import React, { useState } from 'react'
-import BoxFileField, { BoxFileFieldProps } from './BoxFileField'
+import { BoxFileFieldProps } from './BoxFileField'
 import { Image, ImageProps, Box } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/layout'
-import { useFieldState } from '../../hooks/useFieldState'
-import BoxFile from '../BoxFile'
+import { useFieldState } from '../hooks'
+import { BoxFile } from '..'
 
 // @ts-ignore
-interface ImageFileFieldProps extends BoxFileFieldProps {
+interface ImageFileFieldProps extends Partial<BoxFileFieldProps> {
   name: string
   label?: string
   _image?: ImageProps
@@ -23,7 +24,7 @@ const ImageFileField: React.FC<ImageFileFieldProps> = ({
   ...rest
 }) => {
   const [source, setSource] = useState('')
-  const [_, setValue] = useFieldState<any>(name, undefined, {
+  const [, setValue] = useFieldState<any>(name, undefined, {
     onSetValue: (v) => {
       setSource(v)
     }
@@ -35,7 +36,7 @@ const ImageFileField: React.FC<ImageFileFieldProps> = ({
 
   return (
     <BoxFile
-      overflow="hidden"
+      overflow='hidden'
       input={{
         multiple: isMultiple || false,
         onChange: (e) => {
@@ -53,23 +54,29 @@ const ImageFileField: React.FC<ImageFileFieldProps> = ({
       }}
       {...rest}
     >
-      <>
+      <React.Fragment>
         {source ? (
-          <Image w="100%" h="100%" objectFit="contain" {..._image} src={source} />
-            ) : (
+          <Image
+            w='100%'
+            h='100%'
+            objectFit='contain'
+            {..._image}
+            src={source}
+          />
+        ) : (
           <Box
-            w="100%"
-            h="100%"
-            d="flex"
-            alignItems="center"
-            justifyContent="center"
+            w='100%'
+            h='100%'
+            d='flex'
+            alignItems='center'
+            justifyContent='center'
           >
-            <Text textAlign="center" fontWeight="bold" fontSize="sm">
+            <Text textAlign='center' fontWeight='bold' fontSize='sm'>
               {label}
             </Text>
           </Box>
-            )}
-      </>
+        )}
+      </React.Fragment>
     </BoxFile>
   )
 }

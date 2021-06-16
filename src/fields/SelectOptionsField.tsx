@@ -1,39 +1,33 @@
 import React from 'react'
-import Row from '../Row'
-import SquareCheck from '../SquareCheck'
-import { SelectOptionProps, useSelectOption } from '../../hooks/useSelectOption'
-
-interface RenderProps {
-  option: any
-  label: any
-  isChecked: boolean
-  toggle: () => void
-}
+import {
+  SelectOptionProps,
+  RenderFunction,
+  useSelectOption
+} from '../hooks/useSelectOption'
 
 export interface SelectOptionsFieldProps extends SelectOptionProps {
-  render: (props: RenderProps) => React.ReactNode
+  render: RenderFunction
 }
 
 const SelectOptionsField: React.FC<SelectOptionsFieldProps> = ({
   render,
   ...props
 }) => {
-  const { options, getLabel, isItemSelected, toggleItem, items, field } =
-    useSelectOption(props)
+  const { options, isChecked, toggle } = useSelectOption(props)
 
   return (
-    <>
+    <React.Fragment>
       {options.map((option, keyOption) => (
         <React.Fragment key={`option${keyOption}`}>
           {render({
             option,
-            isChecked: isItemSelected(option),
-            label: getLabel(option),
-            toggle: () => toggleItem(option)
+            isChecked: isChecked(keyOption),
+            value: option,
+            toggle: () => toggle(keyOption)
           })}
         </React.Fragment>
       ))}
-    </>
+    </React.Fragment>
   )
 }
 

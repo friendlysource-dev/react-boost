@@ -1,11 +1,9 @@
 import React from 'react'
-import Row from '../Row'
-import { TextareaProps, BoxProps, FormLabel, Textarea } from '@chakra-ui/react'
+import { Row, TextMini, Col } from '..'
+import { TextareaProps, BoxProps, Textarea } from '@chakra-ui/react'
 import ErrorCollapse from './src/ErrorCollapse'
-import Col from '../Col'
-import { useFieldState } from '../../hooks/useFieldState'
+import { useFieldState } from '../hooks'
 import { Text } from '@chakra-ui/layout'
-import TextMini from '../TextMini'
 
 interface TextareaFieldProps extends TextareaProps {
   name: string
@@ -26,24 +24,24 @@ const TextareaField: React.FC<TextareaFieldProps> = ({
   return (
     <Col {..._container}>
       {label && (
-        <Text fontSize="sm" userSelect="none" fontWeight="bold" mb={1}>
+        <Text fontSize='sm' userSelect='none' fontWeight='bold' mb={1}>
           {label}
         </Text>
       )}
       <Row>
         <Textarea
-          focusBorderColor="primary.400"
+          focusBorderColor='primary.400'
           value={value}
           onChange={(e) => setValue(e.target.value)}
-          rounded="sm"
-          bg="gray.600"
+          rounded='sm'
+          bg='gray.600'
           _focus={{ bg: 'white', color: 'gray.800' }}
           {...rest}
         />
         <ErrorCollapse {...field} />
       </Row>
       {description && (
-        <TextMini userSelect="none" color="GrayText">
+        <TextMini userSelect='none' color='GrayText'>
           {description}
         </TextMini>
       )}
