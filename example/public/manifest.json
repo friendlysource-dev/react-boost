@@ -1,6 +1,6 @@
 {
-  "short_name": "@fs/react-boost",
-  "name": "@fs/react-boost",
+  "short_name": "@friendlyss/react-boost",
+  "name": "@friendlyss/react-boost",
   "icons": [
     {
       "src": "favicon.ico",

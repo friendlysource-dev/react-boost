@@ -4,7 +4,7 @@ import { ChakraProvider, Heading } from '@chakra-ui/react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import MasterPage from './components/MasterPage'
 import { theme } from './configs'
-import { Row } from '@fs/react-boost'
+import { Row } from '@friendlyss/react-boost'
 import LogoHorizontal from './components/LogoHorizontal'
 
 const App = () => {

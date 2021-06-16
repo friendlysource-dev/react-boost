@@ -6,7 +6,7 @@ import {
   Col,
   TextMini,
   BoxScrollMini
-} from '@fs/react-boost'
+} from '@friendlyss/react-boost'
 import LinksMenu from './LinksMenu'
 
 const MasterPage: React.FC = ({ children }) => {
