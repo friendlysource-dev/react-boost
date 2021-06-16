@@ -1,6 +1,6 @@
 {
-  "short_name": "react-chakra-ui-collection",
-  "name": "react-chakra-ui-collection",
+  "short_name": "@fs/react-boost",
+  "name": "@fs/react-boost",
   "icons": [
     {
       "src": "favicon.ico",

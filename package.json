@@ -1,10 +1,10 @@
 {
-  "name": "react-chakra-ui-collection",
+  "name": "@fs/react-boost",
   "version": "1.0.0",
   "description": "Made with create-react-library",
   "author": "kodiyak",
   "license": "MIT",
-  "repository": "kodiyak/react-chakra-ui-collection",
+  "repository": "kodiyak/@fs/react-boost",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
@@ -24,7 +24,19 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^16.0.0",
+    "react-dom": "^16.13.1",
+    "@chakra-ui/react": "^1.6.3",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@unform/core": "^2.1.6",
+    "@unform/web": "^2.1.6",
+    "collect.js": "^4.28.6",
+    "file-size": "^1.0.0",
+    "framer-motion": "^4",
+    "react-icons": "^4.2.0",
+    "tiny-typed-emitter": "^2.0.3",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -36,6 +48,7 @@
     "@types/react-dom": "^16.9.7",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
+    "@types/file-size": "^1.0.0",
     "microbundle-crl": "^0.13.10",
     "babel-eslint": "^10.0.3",
     "cross-env": "^7.0.2",
@@ -55,7 +68,18 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "@chakra-ui/react": "^1.6.3",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@unform/core": "^2.1.6",
+    "@unform/web": "^2.1.6",
+    "collect.js": "^4.28.6",
+    "file-size": "^1.0.0",
+    "framer-motion": "^4",
+    "react-icons": "^4.2.0",
+    "tiny-typed-emitter": "^2.0.3",
+    "yup": "^0.32.9"
   },
   "files": [
     "dist"

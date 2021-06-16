@@ -1,13 +1,13 @@
-# react-chakra-ui-collection
+# @fs/react-boost
 
 > Made with create-react-library
 
-[![NPM](https://img.shields.io/npm/v/react-chakra-ui-collection.svg)](https://www.npmjs.com/package/react-chakra-ui-collection) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/@fs/react-boost.svg)](https://www.npmjs.com/package/@fs/react-boost) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save react-chakra-ui-collection
+npm install --save @fs/react-boost
 ```
 
 ## Usage
@@ -15,8 +15,8 @@ npm install --save react-chakra-ui-collection
 ```tsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-chakra-ui-collection'
-import 'react-chakra-ui-collection/dist/index.css'
+import MyComponent from '@fs/react-boost'
+import '@fs/react-boost/dist/index.css'
 
 class Example extends Component {
   render() {

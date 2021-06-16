@@ -1,10 +1,27 @@
 import React from 'react'
 
-import { ExampleComponent } from 'react-chakra-ui-collection'
-import 'react-chakra-ui-collection/dist/index.css'
+import { ChakraProvider, Heading } from '@chakra-ui/react'
+import { BrowserRouter as Router } from 'react-router-dom'
+import MasterPage from './components/MasterPage'
+import { theme } from './configs'
+import { Row } from '@fs/react-boost'
+import LogoHorizontal from './components/LogoHorizontal'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return (
+    <>
+      <ChakraProvider theme={theme}>
+        <Router>
+          <MasterPage>
+            <Row>
+              <LogoHorizontal />
+            </Row>
+            <Heading mt={8}>{`📚`} Coming Soon!</Heading>
+          </MasterPage>
+        </Router>
+      </ChakraProvider>
+    </>
+  )
 }
 
 export default App
